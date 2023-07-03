@@ -1,63 +1,49 @@
-# Nuxt 3 Minimal Starter
+# Quote App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple quote application built with Nuxt.js and powered by the Quotable API. This app fetches a random quote from the API and displays it on the page. It also allows you to get a new quote by clicking a button.
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- Fetches a random quote from the Quotable API
+- Displays the quote content and author on the page
+- Allows you to get a new quote with a button click
+- Changes the background color with each new quote
 
-```bash
-# npm
-npm install
+## Technologies Used
 
-# pnpm
-pnpm install
+- Nuxt.js: A Vue.js framework for building web applications
+- Quotable API: An API that provides a collection of famous quotes
 
-# yarn
-yarn install
-```
+## Getting Started
 
-## Development Server
+1. Clone the repository
 
-Start the development server on `http://localhost:3000`:
+   ```bash
+   git clone https://github.com/boranuzun/nuxt-quotes.git
+   ```
 
-```bash
-# npm
-npm run dev
+2. Navigate to the project directory
+   ```bash
+   cd nuxt-quotes
+   ```
+3. Install the dependencies
+   ```bash
+   npm install
+   ```
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and visit http://localhost:3000 to see the app in action.
 
-# pnpm
-pnpm run dev
+# Configuration
 
-# yarn
-yarn dev
-```
+The app uses the [Quotable API](https://github.com/lukePeavey/quotable) to fetch random quotes. The API endpoint is set to `https://api.quotable.io/quotes/random in the `fetchQuote`function of the`Quotes.vue` component. If you want to use a different API or modify the existing one, you can update the endpoint in the code accordingly.
 
-## Production
+# Contributing
 
-Build the application for production:
+Contributions are welcome! If you find any issues with the app or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-```bash
-# npm
-npm run build
+# License
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is licensed under the [MIT License](LICENSE).
