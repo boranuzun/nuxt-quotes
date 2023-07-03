@@ -65,7 +65,10 @@ console.log("Author:", quote.value?.author);
             <span class="underline">Quotable API</span></NuxtLink
           >
         </div>
-        <div class="p-1 text-sm">&copy; Boran UZUN — 2023</div>
+        <div class="p-1 text-sm">
+          <span>&copy; 2023 — </span>
+          <span><NuxtLink to="https://boranuzun.ch">Boran UZUN</NuxtLink></span>
+        </div>
       </footer>
     </div>
   </div>
