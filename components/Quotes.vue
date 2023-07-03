@@ -1,23 +1,42 @@
 <script setup>
-import { ref } from "vue";
-
 // Initial quote
 const quotes = ref([]);
 const quote = ref(null);
 
+// Function to generate a random pastel color
+const getRandomColor = () => {
+  const hue = Math.floor(Math.random() * 360); // Random hue value between 0 and 360
+  const saturation = Math.floor(Math.random() * 21) + 80; // Random saturation value between 80 and 100
+  const lightness = Math.floor(Math.random() * 11) + 70; // Random lightness value between 70 and 80
+
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+};
+
+// Function to set background color to the container
+const setBackgroundColor = (color) => {
+  const backgroundContainer = document.getElementById("background-container");
+  if (backgroundContainer) {
+    backgroundContainer.style.backgroundColor = color;
+  }
+};
+
+// Fetch the quote from the API
 const fetchQuote = async () => {
   const response = await useFetch("https://api.quotable.io/quotes/random");
-  quotes.value = response.data._value;
+  quotes.value = response.data.value;
   quote.value = quotes.value[0];
+
+  setBackgroundColor(getRandomColor());
 };
 
 // Fetch the initial quote
 fetchQuote();
 
-// Debugging
-console.log("Quotes:", quotes.value[0]);
-console.log("Content:", quote.value?.content);
-console.log("Author:", quote.value?.author);
+// Watch for changes in quote for debugging purposes
+// watch(quote, (newQuote) => {
+//   console.log("Content:", newQuote?.content);
+//   console.log("Author:", newQuote?.author);
+// });
 </script>
 
 <template>
@@ -56,7 +75,7 @@ console.log("Author:", quote.value?.author);
         @click="fetchQuote"
         class="my-16 px-6 py-4 bg-gray-900 text-white rounded-md"
       >
-        Get New Quote
+        New Quote
       </button>
       <footer>
         <div class="p-1 text-sm italic">
@@ -73,5 +92,3 @@ console.log("Author:", quote.value?.author);
     </div>
   </div>
 </template>
-
-<style></style>

@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <!-- <NuxtWelcome /> -->
-    <NuxtPage />
-  </div>
+  <Html lang="en" dir="ltr">
+    <div>
+      <NuxtPage />
+    </div>
+  </Html>
 </template>
