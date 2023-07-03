@@ -51,13 +51,20 @@ console.log("Author:", quote.value?.author);
     </figure>
 
     <!-- Button to fetch new quote -->
-    <div class="flex items-center justify-center ">
+    <div class="flex items-center justify-center flex-col">
       <button
         @click="fetchQuote"
         class="mt-16 px-6 py-4 bg-gray-900 text-white rounded-md"
       >
         Get New Quote
       </button>
+      <div class="p-4 mt-10 text-sm">
+        <span>Built with </span
+        ><NuxtLink to="https://github.com/lukePeavey/quotable">
+          <span class="underline">Quotable API</span></NuxtLink
+        >
+      </div>
+      <div class="p-4 text-sm">&copy; Boran UZUN — 2023</div>
     </div>
   </div>
 </template>
