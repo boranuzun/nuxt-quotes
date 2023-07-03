@@ -1,6 +1,6 @@
-# Quote App
+# Nuxt-Quotes
 
-A simple quote application built with Nuxt.js and powered by the Quotable API. This app fetches a random quote from the API and displays it on the page. It also allows you to get a new quote by clicking a button.
+A simple quote application built with Nuxt.js and powered by the [Quotable API](https://github.com/lukePeavey/quotable). This app fetches a random quote from the API and displays it on the page. It also allows you to get a new quote by clicking a button.
 
 ## Features
 
@@ -38,7 +38,7 @@ A simple quote application built with Nuxt.js and powered by the Quotable API. T
 
 # Configuration
 
-The app uses the [Quotable API](https://github.com/lukePeavey/quotable) to fetch random quotes. The API endpoint is set to `https://api.quotable.io/quotes/random` in the `fetchQuote` function of the `Quotes.vue` component. If you want to use a different API or modify the existing one, you can update the endpoint in the code accordingly.
+The app uses the Quotable API to fetch random quotes. The API endpoint is set to `https://api.quotable.io/quotes/random` in the `fetchQuote` function of the `Quotes.vue` component. If you want to use a different API or modify the existing one, you can update the endpoint in the code accordingly.
 
 # Contributing
 
