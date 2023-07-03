@@ -12,12 +12,10 @@ const getRandomColor = () => {
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 };
 
-// Function to set background color to the container
-const setBackgroundColor = (color) => {
-  const backgroundContainer = document.getElementById("background-container");
-  if (backgroundContainer) {
-    backgroundContainer.style.backgroundColor = color;
-  }
+// Set background color on the client-side
+const setBackgroundColor = () => {
+  const color = getRandomColor();
+  document.body.style.backgroundColor = color;
 };
 
 // Fetch the quote from the API
@@ -26,7 +24,10 @@ const fetchQuote = async () => {
   quotes.value = response.data.value;
   quote.value = quotes.value[0];
 
-  setBackgroundColor(getRandomColor());
+  // Set background color on the client-side
+  if (typeof document !== "undefined") {
+    setBackgroundColor();
+  }
 };
 
 // Fetch the initial quote
